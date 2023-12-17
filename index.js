@@ -1,5 +1,5 @@
 
-export default function potpack(boxes) {
+export default function potpack(boxes, outerWidth) {
 
     // calculate total box area and maximum box width
     let area = 0;
@@ -15,7 +15,7 @@ export default function potpack(boxes) {
 
     // aim for a squarish resulting container,
     // slightly adjusted for sub-100% space utilization
-    const startWidth = Math.max(Math.ceil(Math.sqrt(area / 0.95)), maxWidth);
+    const startWidth = outerWidth > 0 ? Math.max(outerWidth, maxWidth) : Math.max(Math.ceil(Math.sqrt(area / 0.95)), maxWidth);
 
     // start with a single empty space, unbounded at the bottom
     const spaces = [{x: 0, y: 0, w: startWidth, h: Infinity}];

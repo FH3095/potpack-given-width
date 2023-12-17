@@ -33,7 +33,7 @@ declare module "potpack" {
    * Mutates the {@link boxes} array: it's sorted by height,
    * and box objects are augmented with `x`, `y` coordinates.
    */
-  const potpack: (boxes: PotpackBox[]) => PotpackStats;
+  const potpack: (boxes: PotpackBox[], outerWidth?: bigint) => PotpackStats;
 
   export default potpack;
 }
